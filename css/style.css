@@ -1,0 +1,122 @@
+*{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+.navbar-nav{
+   display: flex;
+   justify-content: flex-end;
+   width: 100%
+}
+.logo{
+ border-radius:50%;
+ object-fit: cover;
+}
+.Admin{
+   border: 1px solid blue;
+   border-radius: 4px;
+   background-color: white;
+}
+.Admin:hover{
+   background-color: rgb(29, 29, 158);
+   color: white;
+}
+
+audio{
+   width: 100%;
+   display: flex;
+   justify-content: flex-end;
+   position: fixed;
+}
+section{
+   background-color: blanchedalmond;
+   display: flex;
+   align-items: center;
+   align-items: center;
+
+}
+.txt{
+display: flex;
+justify-content: center;
+flex-direction: column;
+width: 50%;
+}
+section h2{
+color: blueviolet;
+font-weight: 800;
+margin-left: 3rem;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+section h1{
+   margin-left: 3rem;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+ 
+}
+.img-fluid{
+   width: 50%;
+   height: 40%;
+   
+}
+.head{
+   text-align: center;
+   font-family:  Tahoma, Geneva, Verdana, sans-serif;
+   margin: 2rem;
+}
+.box{
+   margin: 1rem;
+display: flex;
+justify-content: space-around;
+  border-radius: 12px;
+  
+
+}
+#seeall{
+   
+   display: flex;
+   justify-content: center;
+   margin: 1rem 0;
+
+   
+}
+.seeall{
+ 
+   border: 1px solid green;
+height: 3rem;
+
+}
+.seeall:hover{
+   background-color: green;
+   color: white;
+}
+.card {
+   height: 80vh;
+   width: 23%;
+   display: flex;
+   align-items: center;
+   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+   transition: all 0.3s ease;
+   margin-top: 4rem;
+}
+.card:hover{
+   box-shadow: none;
+
+}
+.link a{
+   text-decoration: none;
+}
+.card img{
+   width: 80%;
+   height: 60%;
+   margin-top:12px ;
+}
+
+footer{
+   width: 100%;
+   background-color: rgb(26, 26, 26);
+   height: 13vh;
+   color: rgb(161, 155, 155);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+

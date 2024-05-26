@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Song Info</title>
+    <script src="https://cdn.jsdelivr.net/npm/dexie@3.0.3/dist/dexie.min.js"></script>
+</head>
+<body>
+    <h1>Upload Song Information</h1>
+    <form id="uploadForm">
+        <label for="imageFile">Select Image:</label>
+        <input type="file" id="imageFile" name="imageFile" accept="image/*" required><br><br>
+
+        <label for="songName">Song Name:</label>
+        <input type="text" id="songName" name="songName" required><br><br>
+
+        <label for="songUrl">Song URL:</label>
+        <input type="text" id="songUrl" name="songUrl" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        // Initialize Dexie
+        const db = new Dexie("SongDatabase");
+        db.version(1).stores({
+            songs: "++id,imageUrl,songName,songUrl"
+        });
+
+        document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const imageFile = document.getElementById('imageFile').files[0];
+            const songName = document.getElementById('songName').value;
+            const songUrl = document.getElementById('songUrl').value;
+
+            const reader = new FileReader();
+            reader.onload = async function(e) {
+                const imageUrl = e.target.result;
+
+                const newCard = {
+                    imageUrl: imageUrl,
+                    songName: songName,
+                    songUrl: songUrl
+                };
+
+                // Save to IndexedDB
+                await db.songs.add(newCard);
+
+                // Redirect to Music.html
+                window.location.href = '../html/Music.html';
+            };
+
+            if (imageFile) {
+                reader.readAsDataURL(imageFile);
+            }
+        });
+    </script>
+</body>
+</html>

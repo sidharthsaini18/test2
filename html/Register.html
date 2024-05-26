@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Registration Form</title>
+    <link rel="stylesheet" href="../css/Register.css">
+   
+</head>
+<body>
+    <div class="container">
+        <h2>Admin Registration</h2>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="emailError">Please enter a valid email address.</span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required minlength="8">
+                <span class="error-message" id="passwordError">Password must be at least 8 characters long.</span>
+                <div class="show-password">
+                    <input type="checkbox" id="showPassword1">
+                    <label for="showPassword1">Show Password</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <span class="error-message" id="confirmPasswordError">Passwords do not match.</span>
+                <div class="show-password">
+                    <input type="checkbox" id="showPassword2">
+                    <label for="showPassword2">Show Password</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+
+
+<!-- Firebase SDKs (use the CDN URLs for legacy non-module environments) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore-compat.js"></script>
+
+    
+        <script>
+      const firebaseConfig = {
+  apiKey: "AIzaSyDpF8YGT0qeTJWjryajdbDVieUDzFskt4o",
+  authDomain: "ps-records-4d6fe.firebaseapp.com",
+  projectId: "ps-records-4d6fe",
+  storageBucket: "ps-records-4d6fe.appspot.com",
+  messagingSenderId: "1082630280728",
+  appId: "1:1082630280728:web:a2f2b6385414232c98556d",
+  measurementId: "G-1D9VXQGM3E"
+};
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+</script>
+<script src="../js/register.js"></script>
+</body>
+</html>
